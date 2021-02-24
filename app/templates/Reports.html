@@ -1,0 +1,8 @@
+{% extends "base.html"%}
+
+{% block main %} 
+{% include 'flash_messages.html' %}
+<p>Select an option</p>
+    <a href = "{{url_for('View')}}"<button type="submit" id="button">View all Reports</button></a>
+     <a href = "{{url_for('New')}}"<button type="submit" id="button">Make a New Report</button></a>
+{% endblock %}.

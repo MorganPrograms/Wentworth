@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block main %}
+<h1 class="page-header">Contact Us</h1>
+{% include 'flash_messages.html' %}
+<p class="lead">Send us a message by filling out the below form and pressing the submit button.</p>
+<div id = "container">
+<form action="{{ url_for('Contact') }}" method="post" enctype="multipart/form-data">
+        {{ form.csrf_token }}
+        <div class="form-group">
+            {{ form.Name.label}} {{ form.Name(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.Email.label}} {{ form.Email(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.Subject.label}} {{ form.Subject(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.Message.label}} {{ form.Message(class="form-control") }}
+        </div>
+
+    <button type="submit" id="button">Submit</button>
+</form>
+<br>
+<img id = "icon" src = "{{url_for('static', filename = "Location Icon.jpg")}}"/>
+<p>Visit us at 20 1/2 Duke's Street, Kingston Jamaica.</p>
+<img id = "icon" src = "{{url_for('static', filename = "Email Icon.jpg")}}"/>
+<p>Email us at: wscharlesandco@gmail.com</p>
+<img id = "icon" src = "{{url_for('static', filename = "Phone Icon.jpg")}}"/>
+<p>Call us at: 1-876-922-4425 or 1-876-967-4520 </p>
+<img id = "icon" src = "{{url_for('static', filename = "Fax Icon.jpg")}}"/>
+<p>Fax us at: 1-876-922-9130 </p>
+{% endblock %}

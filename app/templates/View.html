@@ -1,0 +1,20 @@
+{% extends "base.html"%}
+
+{% block main %}
+{% include 'flash_messages.html' %}
+<p class="lead">The current reports in the system are found below</p>
+{%for report in reports%}
+<div id = "holder">
+
+<img src = "{{url_for('static', filename = "uploads/"+report.File)}}"/>
+<b>{{report.First_name}} {{report.Middle_name}} {{report.Last_name}}</b> <br>Sex: {{report.Sex}} <br> Age: {{report.Age}} <br> Email: {{report.Email}} <br> Telephone: {{report.Phone}} <br> Illness: {{report.Illness}} <br> Comments: {{report.Comments}} <br> Prescription: {{report.Prescription}} <br> Medical History: {{report.History}} <br> Date of Report: {{report.Date}}</p>
+<a href = "{{url_for('Edit',userid = report.id)}}"<button type="submit" id="button">Edit this report</button></a>
+<a href = "{{url_for('Delete',userid = report.id)}}" <button type="submit" id="button3">Delete this Report </button></a>
+<br>
+</div>
+{%endfor%}
+
+
+<a href = "{{url_for('Reports')}}" <button type = "submit" id = "button">Return to Menu</button></a> 
+
+{% endblock %}.

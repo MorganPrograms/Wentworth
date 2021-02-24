@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block main %}
+<h1 class="page-header">Make your changes to the Medical Report</h1>
+{% include 'flash_messages.html' %}
+<p class="lead">Please Fill out the below form.</p>
+<div id = "container">
+<form action="{{ url_for('Edit', userid = profile.id) }}" method="post" enctype="multipart/form-data">
+        {{ form.csrf_token }}
+        <div class="form-group">
+            {{ form.F_Name.label}} {{ form.F_Name(class="form-control"  ) }}
+        </div>
+        <div class="form-group">
+            {{ form.M_Name.label}} {{ form.M_Name(class="form-control") }} 
+        </div>
+        <div class="form-group">
+            {{ form.L_Name.label}} {{ form.L_Name(class="form-control") }}
+        </div>
+<div class="form-group">
+            {{ form.Sex.label}} {{ form.Sex(class="form-control") }} 
+        </div>
+        <div class="form-group">
+            {{ form.Age.label}} {{ form.Age(class="form-control") }} 
+        </div>
+        <div class="form-group">
+            {{ form.Email.label}} {{ form.Email(class="form-control") }} 
+        </div>
+        <div class="form-group">
+            {{ form.Phone.label}} {{ form.Phone(class="form-control") }} 
+        </div>
+        <div class="form-group">
+            {{ form.Illness.label}} {{ form.Illness(class="form-control") }} 
+        </div>
+        <div class="form-group">
+            {{ form.Comments.label}} {{ form.Comments(class="form-control") }} 
+        </div>
+        <div class="form-group">
+            {{ form.Prescription.label}} {{ form.Prescription(class="form-control") }} 
+        </div>
+        <div class="form-group">
+            {{ form.History.label}} {{ form.History(class="form-control") }} 
+        </div>
+ <div class="form-group">
+            {{ form.file.label }}
+            {{ form.file(class="form-control") }} 
+<img src = "{{url_for('static', filename = "uploads/"+profile.File)}}"/>
+        </div>
+    <button type="submit" id="button">Finish Editing </button>
+<a href = "{{url_for('Reports')}}" <button type = "submit" id = "button3">Cancel</button></a> 
+</form>
+
+{% endblock %}

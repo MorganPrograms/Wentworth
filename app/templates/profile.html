@@ -1,0 +1,43 @@
+{% extends "base.html"%}
+
+{% block main %} 
+<h1 class="page-header">Register to Join Mylists</h1>
+
+{% include 'flash_messages.html' %}
+<div id = "container">
+<form action="{{ url_for('profile') }}" method="post" enctype="multipart/form-data">
+        {{ form.csrf_token }}
+        <div class="form-group">
+<img src = "{{url_for('static', filename = "uploads/check.png")}}"/>
+            {{ form.F_Name.label}} {{ form.F_Name(class="form-control") }}
+        </div>
+<div class="form-group">
+<img src = "{{url_for('static', filename = "uploads/check.png")}}"/>
+            {{ form.L_Name.label}} {{ form.L_Name(class="form-control") }}
+        </div>
+<div class="form-group">
+<img src = "{{url_for('static', filename = "uploads/check.png")}}"/>
+            {{ form.Gender.label}} {{ form.Gender(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.Email.label }} {{ form.Email(class="form-control") }}
+
+        </div>
+        <div class="form-group">
+            {{ form.Location.label }} {{ form.Location(class="form-control") }}
+
+        </div>
+        <div class="form-group">
+            {{ form.Biography.label }} {{ form.Biography(class="form-control") }}
+
+        </div>
+ <div class="form-group">
+            {{ form.file.label }}
+            {{ form.file(class="form-control") }}
+        </div>
+    <button type="submit" id="button">Add Profile</button>
+</form>
+</div> 
+
+{% endblock %}.
