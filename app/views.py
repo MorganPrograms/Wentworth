@@ -48,7 +48,7 @@ def Home():
         #subject = Subject
         #name = Name
         #email = Email
-        #msg = Message(subject, sender="videolover967@gmail.com",recipients=["sirhcagrom@outlook.com"])
+        #msg = Message(subject, sender="videolover967@gmail.com",recipients=[""])
         #msg.body = Name+"\n+"+Email+"\n"+message
         #mail.send(msg)
         flash('Your message has been sent!', 'success')
@@ -82,7 +82,7 @@ def Contact():
         #subject = Subject
         #name = Name
         #email = Email
-        #msg = Message(Subject, sender=email,recipients=["sirhcnagrom@outlook.com"])
+        #msg = Message(Subject, sender=email,recipients=[""])
         #msg.body = message
         #mail.send(msg)
         flash('Your message has been sent!', 'success')
