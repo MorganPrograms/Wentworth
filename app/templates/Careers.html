@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block main %}
+<h1 class="page-header">Careers</h1>
+<p class = "lead">Please fill out the below form and press the submit button to apply for a position</p>
+{% include 'flash_messages.html' %}
+<div id = "container">
+<form action="{{ url_for('Careers') }}" method="post" enctype="multipart/form-data">
+        {{ form.csrf_token }}
+        <div class="form-group">
+            {{ form.Name.label}} {{ form.Name(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.Email.label}} {{ form.Email(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.Cover.label}} {{ form.Cover(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.Resume.label}} {{ form.Resume(class="form-control") }}
+        </div>
+    <button type="submit" id="button">Submit</button>
+</form>
+{% endblock %}
